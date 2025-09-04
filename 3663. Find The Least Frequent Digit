@@ -1,0 +1,31 @@
+int getLeastFrequentDigit(int n) {
+    int counts[10] = {0};
+
+    if (n == 0) {
+        return 0;
+    }
+
+    if (n < 0) {
+        n = -n;
+    }
+
+    while (n > 0) {
+        int digit = n % 10;
+        counts[digit]++;
+        n = n / 10;
+    }
+
+    int minCount = -1;
+    int leastFrequentDigit = -1;
+
+    for (int i = 0; i < 10; i++) {
+        if (counts[i] > 0) {
+            if (leastFrequentDigit == -1 || counts[i] < minCount) {
+                minCount = counts[i];
+                leastFrequentDigit = i;
+            }
+        }
+    }
+    
+    return leastFrequentDigit;
+}
