@@ -1,0 +1,21 @@
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+int gcdOfOddEvenSums(int n) 
+{
+    int SumOdd = 0, SumEven = 0;
+    int i = 1;
+
+    while(i <= n)
+    {
+        SumOdd += 2*i -1;
+        SumEven += 2*i;
+        i++;
+    }
+    int resposta = gcd(SumOdd,SumEven);
+    return resposta;
+}
