@@ -1,0 +1,6 @@
+def interest(p, r, n):
+    SimJur = p +  p * r * n
+    ComJur = p * (1 + r) ** n
+    SimJur = round(SimJur)
+    ComJur = round(ComJur)
+    return [SimJur, ComJur]
