@@ -1,0 +1,5 @@
+def diagonal_sum(array):
+    soma = 0
+    for i in range(len(array)):
+        soma += array[i][i]
+    return soma
