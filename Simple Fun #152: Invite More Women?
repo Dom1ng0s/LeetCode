@@ -1,0 +1,28 @@
+#include <stddef.h>
+#include <stdbool.h>
+
+bool invite_more_women(const int array[/* count */], size_t count)
+{
+  int Hom = 0, Mul=0;
+  int i = 0;
+  while(i<count)
+    {
+    if(array[i] == 1)
+      {
+      Hom++;
+    }
+    else 
+      {
+      Mul++;
+    }
+    i++;
+  }
+  if(Hom>Mul)
+    {
+    return true;
+  }
+  else 
+    {
+    return false;
+  }
+}
